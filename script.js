@@ -28,18 +28,27 @@ function addCard(term, definition) {
 }
 
 function tryIndexMinusOne() {
-    if(currentIndex != 0) {
+    if(currentIndex === 0) {
+        currentIndex = flashcards.length-1;
+    } else {
         currentIndex--;
-        showingTerm = true;
-        displayCard();
     }
+
+    showingTerm = true;
+    displayCard();
+
 }
 function tryIndexPlusOne() {
-    if(currentIndex != flashcards.length-1) {
+
+    if(currentIndex === flashcards.length-1) {
+        currentIndex = 0;
+    } else {
         currentIndex++;
-        showingTerm = true;
-        displayCard();
     }
+
+    showingTerm = true;
+    displayCard();
+
 }
 
 // The rest of the code you will write is apart of event listeners
